@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Fonts ─────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/assets/fonts/MonaSans-Variable.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* ── Vinx Brand Palette — dark navy + electric gold ── */
+    /* Navy background */
+    --background:         0.22 0.022 248;
+    --foreground:         0.95 0.01  90;
+
+    /* Cards slightly lighter navy */
+    --card:               0.26 0.028 248;
+    --card-foreground:    0.95 0.01  90;
+
+    /* Popovers */
+    --popover:            0.24 0.025 248;
+    --popover-foreground: 0.95 0.01  90;
+
+    /* Electric gold primary */
+    --primary:            0.80 0.17  85;
+    --primary-foreground: 0.10 0.02  248;
+
+    /* Muted navy */
+    --secondary:          0.30 0.032 248;
+    --secondary-foreground: 0.85 0.01 90;
+
+    --muted:              0.30 0.025 248;
+    --muted-foreground:   0.65 0.015 248;
+
+    /* Accent = warm gold tint */
+    --accent:             0.75 0.15  85;
+    --accent-foreground:  0.10 0.02  248;
+
+    /* Destructive */
+    --destructive:        0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Borders */
+    --border:             0.34 0.03  248;
+    --input:              0.32 0.03  248;
+    --ring:               0.80 0.17  85;
+
+    /* Charts */
+    --chart-1: 0.80 0.17  85;
+    --chart-2: 0.60 0.12  200;
+    --chart-3: 0.55 0.13  160;
+    --chart-4: 0.70 0.18  60;
+    --chart-5: 0.65 0.20  30;
+
+    /* Sidebar */
+    --sidebar:                  0.20 0.022 248;
+    --sidebar-foreground:       0.95 0.01  90;
+    --sidebar-primary:          0.80 0.17  85;
+    --sidebar-primary-foreground: 0.10 0.02 248;
+    --sidebar-accent:           0.22 0.032 248;
+    --sidebar-accent-foreground: 0.85 0.01 90;
+    --sidebar-border:           0.28 0.03  248;
+    --sidebar-ring:             0.80 0.17  85;
+
+    /* Custom brand tokens */
+    --gold:             0.80 0.17  85;
+    --gold-bright:      0.88 0.19  90;
+    --gold-dark:        0.65 0.14  78;
+    --navy-deep:        0.18 0.018 248;
+    --navy-mid:         0.24 0.025 248;
+    --navy-surface:     0.28 0.030 248;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Mona Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ─── Utility helpers ───────────────────────────────────────────────────── */
+@layer utilities {
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+  .bg-navy-deep {
+    background-color: oklch(var(--navy-deep));
+  }
+  .bg-navy-mid {
+    background-color: oklch(var(--navy-mid));
+  }
+  .bg-navy-surface {
+    background-color: oklch(var(--navy-surface));
+  }
+  .border-gold {
+    border-color: oklch(var(--gold));
+  }
+  .font-display {
+    font-family: "Cabinet Grotesk", sans-serif;
+  }
+  .font-serif-display {
+    font-family: "Fraunces", serif;
+  }
+  .gradient-gold {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--gold-bright)) 0%,
+      oklch(var(--gold)) 50%,
+      oklch(var(--gold-dark)) 100%
+    );
+  }
+  .gradient-navy {
+    background: linear-gradient(
+      180deg,
+      oklch(var(--navy-deep)) 0%,
+      oklch(var(--navy-mid)) 100%
+    );
+  }
+  .glow-gold {
+    box-shadow: 0 0 24px oklch(var(--gold) / 0.35),
+                0 4px 16px oklch(var(--navy-deep) / 0.6);
+  }
+  .text-shadow-gold {
+    text-shadow: 0 2px 20px oklch(var(--gold) / 0.4);
+  }
+}
