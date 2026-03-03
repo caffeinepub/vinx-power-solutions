@@ -21,9 +21,9 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Overlay gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/80 via-navy-deep/60 to-navy-deep" />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/70 via-transparent to-navy-deep/50" />
+      {/* Overlay gradients — reduced opacity to reveal universe animation beneath */}
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/55 via-navy-deep/35 to-navy-deep/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/50 via-transparent to-navy-deep/35" />
 
       {/* Decorative gold line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" />

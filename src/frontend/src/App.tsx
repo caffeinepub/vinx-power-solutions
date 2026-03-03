@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import SectorsSection from "./components/SectorsSection";
+import UniverseBackground from "./components/UniverseBackground";
 import AdminPage from "./pages/AdminPage";
 
 function HomePage() {
@@ -28,6 +29,7 @@ export default function App() {
 
   return (
     <>
+      <UniverseBackground />
       {isAdmin ? <AdminPage /> : <HomePage />}
       <Toaster richColors theme="dark" />
     </>
